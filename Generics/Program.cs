@@ -21,6 +21,6 @@ class Utils
         => Console.WriteLine(a == b);
     public static void Compare(double a, double b) 
         => Console.WriteLine(a == b);
-    public static void CompareGeneric<T>(T a, T b) where T : IComparable<T>, IEquatable<T>
-        => Console.WriteLine(a.Equals(b));
+    public static void CompareGeneric<T>(T a, T b)
+        => Console.WriteLine(EqualityComparer<T>.Default.Equals(a, b));
 }
